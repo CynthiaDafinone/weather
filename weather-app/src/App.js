@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react';
+//require('dotenv').config()
 
 
 const api = {
-  key: "97216c6df5d02f0163d4b80cd7fed493",
+  key: process.env.REACT_APP_API_KEY,
   base: "https://api.openweathermap.org/data/2.5/"
 }
 
@@ -45,7 +46,7 @@ function App() {
           <input 
             type="text"
             className="search-bar"
-            placeholder="Search..."   
+            placeholder="Enter a City or Country..."   
             onChange={e => setQuery(e.target.value)}
             value={query}
             onKeyPress={search}
